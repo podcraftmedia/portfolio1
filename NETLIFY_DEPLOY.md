@@ -1,0 +1,166 @@
+# 🚀 Deploy to Netlify - Simple Guide
+
+## Method 1: Drag & Drop (Easiest - 2 minutes)
+
+### Step 1: Build Your Site Locally
+In your portfolio folder, run:
+```bash
+npm run build
+```
+
+Wait for it to finish (about 30 seconds)
+
+### Step 2: Go to Netlify
+1. Visit [app.netlify.com](https://app.netlify.com)
+2. Log in or sign up (free account)
+3. Look for "Add new site" button
+4. Click "Deploy manually"
+
+### Step 3: Drag & Drop
+1. Find your `.next` folder in the portfolio directory
+2. Drag the entire `.next` folder onto Netlify's drop zone
+3. Wait for upload (1-2 minutes)
+4. Done! You'll get a live URL like `your-site-name.netlify.app`
+
+---
+
+## Method 2: Connect GitHub (Best for Updates)
+
+### Step 1: Push to GitHub
+Make sure your portfolio is on GitHub:
+```bash
+cd Desktop\portfolio
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/podcraftmedia/portfolio.git
+git push -u origin main
+```
+
+### Step 2: Connect to Netlify
+1. Go to [app.netlify.com](https://app.netlify.com)
+2. Click "Add new site" → "Import an existing project"
+3. Click "GitHub"
+4. Select your `portfolio` repository
+5. Configure settings:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `.next`
+6. Click "Deploy site"
+
+### Step 3: Wait
+- Netlify will build and deploy automatically
+- Takes about 2-3 minutes
+- You'll get a URL like `random-name-123.netlify.app`
+
+### Step 4: Custom Domain (Optional)
+1. Click "Domain settings"
+2. Click "Add custom domain"
+3. Follow DNS setup instructions
+
+---
+
+## Method 3: Netlify CLI (Advanced)
+
+### Install Netlify CLI
+```bash
+npm install -g netlify-cli
+```
+
+### Login
+```bash
+netlify login
+```
+
+### Deploy
+```bash
+cd Desktop\portfolio
+netlify deploy
+```
+
+Follow the prompts, then:
+
+### Production Deploy
+```bash
+netlify deploy --prod
+```
+
+---
+
+## 🎯 Quick Checklist Before Deploy
+
+- [ ] Build works locally: `npm run build`
+- [ ] No errors in build output
+- [ ] `netlify.toml` file exists
+- [ ] All personal info updated
+- [ ] CV file added (cv.pdf)
+- [ ] Videos added or placeholders ready
+
+---
+
+## 🆘 Troubleshooting
+
+### Build Fails on Netlify
+
+**Error: "Command not found"**
+- Make sure `netlify.toml` has correct build command
+- Should be: `npm run build`
+
+**Error: "Module not found"**
+- Check `package.json` has all dependencies
+- Try clearing cache in Netlify: Deploy settings → Clear cache
+
+**Error: "Out of memory"**
+- Add environment variable in Netlify:
+  - `NODE_OPTIONS="--max-old-space-size=4096"`
+
+### Site Shows Error 404
+
+- Check publish directory is `.next`
+- Make sure build completed successfully
+- Check Netlify function logs
+
+### Images/Assets Not Loading
+
+- Check file paths start with `/` for public folder
+- Example: `/cv.pdf` not `cv.pdf`
+- Verify files exist in `public/` folder
+
+---
+
+## 📊 After Deployment
+
+### Get Your URL
+Netlify gives you: `https://your-site-name.netlify.app`
+
+### Custom Domain
+1. Buy domain (Namecheap, Google Domains)
+2. In Netlify: Settings → Domain management
+3. Add your domain
+4. Update DNS records at your registrar
+5. Wait 24-48 hours for DNS propagation
+
+### Automatic Deployments
+When connected to GitHub:
+- Every push to `main` auto-deploys
+- Pull requests get preview URLs
+- No manual work needed!
+
+---
+
+## 🎉 That's It!
+
+Your portfolio is now live on Netlify!
+
+**Recommended:** Use Method 2 (GitHub connection) for easiest updates.
+
+---
+
+## 📞 Useful Links
+
+- Netlify Dashboard: https://app.netlify.com
+- Netlify Docs: https://docs.netlify.com
+- Support: https://answers.netlify.com
+
+---
+
+Good luck! 🚀
