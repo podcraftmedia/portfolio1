@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --accent: #00ff88;
-  --accent-hover: #00cc6e;
+  --background: #ffffff;
+  --foreground: #171717;
+  --accent: #171717;
+  --accent-hover: #404040;
 }
 
 @theme inline {
@@ -60,16 +60,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #d4d4d4;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #a3a3a3;
 }
 
 /* Smooth animations */
@@ -126,8 +126,8 @@ p {
 
 /* Selection color */
 ::selection {
-  background-color: var(--accent);
-  color: #0a0a0a;
+  background-color: #e5e5e5;
+  color: #171717;
 }
 
 /* Improve touch targets on mobile */
